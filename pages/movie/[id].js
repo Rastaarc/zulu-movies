@@ -3,15 +3,18 @@ import Head from 'next/head'
 
 const MovieDetails = ({movieId}) => {
     return (
-        <div>
+        <>
             <Head>
                 <title>Movie Detail | Zulu  - Rastaarc</title>
                 <meta name="description" contents="the movie description"/>
             </Head>
-            Movie Details for {movieId}
-            <br/>
-            <p>io</p>
-        </div>
+
+            <div>
+                Movie Details for {movieId}
+                <br/>
+                <p>io</p>
+            </div>
+        </>
     )
 }
 
