@@ -11,10 +11,10 @@ const Footer = () => {
                     new Date().getFullYear()
                 }
                     Zulu. All Right Reserved.
-                                                                                                                                                                                                                                                                                                                                                                                                            Developed by Rastaarc (08141161177)
+                                                                                                                                                                                                                                                                                                                                                                                                                                Developed by Rastaarc (08141161177)
                 </p>
                 <div className="pt-5 flex items-center justify-center p-2 space-x-4 text-gray-100">
-                    <a href="http://www.linkedin.com/rastaxarm" target="_blank" rel="noopener noreferrer">
+                    <a href="http://www.linkedin.com/in/rastaxarm" target="_blank" rel="noopener noreferrer">
                         <FaLinkedinIn className="h-6"/>
                     </a>
                     <a href="http://www.github.com/rastaarc" target="_blank" rel="noopener noreferrer">
