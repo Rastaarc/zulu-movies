@@ -1,20 +1,32 @@
 import Image from 'next/image'
-const Movie = () => {
+import {IMAGE_PATH} from '../libs/constants'
+const Movie = ({movie}) => {
+
     return (
         <div className="group cursor-pointer">
-            <Image
-                className="object-cover transform group-hover:scale-110 transition-all duration-500 ease-in-out"
-                layout="responsive"
-                src="/rasta.jpg"
+            <Image className="object-cover object-center transform group-hover:scale-110 transition-all duration-500 ease-in-out" layout="responsive"
+                src={
+                    `${IMAGE_PATH}${
+                        movie.poster_path
+                    }`
+                }
                 width="1920"
-                height="1080"/>
-            <div className="p-2 truncate max-w-sm">
-                <p className="text-xl tracking-wide group-hover:font-bold">Title</p>
-                <p className="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi maxime sit magnam aliquid. Aliquam voluptatibus impedit nisi facere ut laudantium sint tempora eius, quidem facilis nemo ipsum nostrum quae repudiandae.</p>
+                height="1280"/>
+            <div className="p-2 truncate w-full max-w-sm">
+                <p className="text-xl tracking-wide group-hover:font-bold">
+                    {
+                    movie.title
+                }</p>
+                <p className="text-sm w-full">
+                    {
+                    movie.overview
+                }</p>
                 <div className="py-3 text-xs">
-                    <p>Rating:</p>
+                    <p>Rating: {
+                        movie.vote_average
+                    }</p>
                 </div>
-           </div>
+            </div>
         </div>
     )
 }

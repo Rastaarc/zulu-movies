@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {HomeIcon, LightningBoltIcon, UserIcon} from '@heroicons/react/outline'
 import MenuItem from './MenuItem'
+import {sections} from '../libs/constants'
+
 
 const Header = ({sec}) => {
 

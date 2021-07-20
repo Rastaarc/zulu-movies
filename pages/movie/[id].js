@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+// import fetchMovies from '../../libs/fetchMovies'
 
 const MovieDetails = ({movieId}) => {
     return (
@@ -20,6 +20,7 @@ const MovieDetails = ({movieId}) => {
 
 
 export const getServerSideProps = async (context) => {
+
     return {
         props: {
             movieId: context.params.id
