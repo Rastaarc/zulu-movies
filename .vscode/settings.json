@@ -1,3 +1,6 @@
 {
-    "editor.defaultFormatter": "mblode.pretty-formatter"
+    "editor.defaultFormatter": "mblode.pretty-formatter",
+    "[css]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    }
 }
