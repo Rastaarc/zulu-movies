@@ -9,7 +9,7 @@ const Header = ({sec}) => {
 
     return (
         <>
-            <div className="flex flex-col md:flex-row items-center justify-center md:justify-between md:px-4 md:py-5 space-y-10 md:space-y-0">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between md:px-4 md:py-5 space-y-10 md:space-y-0">
                 <div className="flex justify-center space-x-7 md:space-x-4">
                     <MenuItem title="Home"
                         Icon={HomeIcon}

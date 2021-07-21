@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import MoviesList from '../components/MoviesList'
-import Footer from '../components/Footer'
 import {trendingMovies, popularMovies} from '../libs/fetchMovies'
 import Error from '../components/Error'
 import {sections} from '../libs/constants'
@@ -16,13 +15,11 @@ const Home = ({sec, error, movies}) => {
             </Head>
 
             {
-            error ? <Error title="Oops, Something seem went wrong"
+            error ? <Error title="Oops!!, Fetch Failed"
                 message={
                     error.message
                 }/> : <MoviesList movies={movies}/>
-        }
-
-            <Footer/> {/* Footer */} </>
+        } </>
     )
 }
 

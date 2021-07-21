@@ -15,12 +15,12 @@ export const popularMovies = async () => {
     return fetch(tmdbLink(path)).then(payload).catch(errorMessage)
 }
 
-const errorMessage = (_ = '', msg = 'Failed to fetch data') => {
+const errorMessage = (_ = '', msg = "Sorry, we couldn't complete your request. Please Try again in a moment") => {
     console.log('fetchError:' + _.message ? _.message : _)
     return {error: true, message: msg}
 }
 const payload = async (data) => {
     const receivedData = await data.json()
-    const results = receivedData.results ? receivedData.results : errorMessage('', 'Something went wrong the fetch')
+    const results = receivedData.results ? receivedData.results : errorMessage('', "Sorry, we couldn't complete your request. Please Try again in a moment")
     return results
 }

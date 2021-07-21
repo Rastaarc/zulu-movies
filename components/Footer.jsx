@@ -8,10 +8,9 @@ const Footer = () => {
 
                 <p className="px-2 text-center flex flex-wrap justify-center items-center">
                     &copy; {
-                    new Date().getFullYear()
+                    " " + new Date().getFullYear() + ", "
                 }
-                    Zulu. All Right Reserved.
-                                                                                                                                                                                                                                                                                                                                                                                                                                Developed by Rastaarc (08141161177)
+                    Zulu. All Right Reserved. Developed by Rastaarc
                 </p>
                 <div className="pt-5 flex items-center justify-center p-2 space-x-4 text-gray-100">
                     <a href="http://www.linkedin.com/in/rastaxarm" target="_blank" rel="noopener noreferrer">

@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import NProgress from 'nprogress';
 import {useRouter} from 'next/router';
+import Footer from '../components/Footer';
 
 function MyApp({Component, pageProps}) {
     const router = useRouter()
@@ -30,7 +31,7 @@ function MyApp({Component, pageProps}) {
             <Header sec={sec}/>
             <Component {...pageProps}/>
 
-        </>
+            <Footer/> {/* Footer */} </>
     )
 }
 
