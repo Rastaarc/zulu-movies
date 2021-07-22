@@ -5,13 +5,15 @@ import MovieDetails from '../../components/MovieDetails'
 import {movieDetails} from '../../libs/fetchMovies'
 
 const Movie = ({movie, error}) => {
-    const title = movie.title ? movie.title : 'Movie Details '
+    const title = movie.title ? movie.title : 'Movie Details'
     const desc = movie.overview ? movie.overview : 'The Description of the movie goes here'
 
     return (
         <>
             <Head>
-                <title>{title}
+                <title>{
+                    title + ' '
+                }
                     | Zulu  - Rastaarc</title>
                 <meta name="description"
                     contents={desc}/>
