@@ -1,4 +1,4 @@
-# Zulu Movies By Rastaarc Using TMBD Movies API
+# Zulu Movies By Rastaarc Using TMdb Movies API
 
 ## Stack used: Next.js + Tailwind CSS
 

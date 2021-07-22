@@ -21,6 +21,7 @@ const errorMessage = (_ = '', msg = "Sorry, we couldn't complete your request. P
 }
 const payload = async (data) => {
     const receivedData = await data.json()
-    const results = receivedData.results ? receivedData.results : errorMessage('', "Sorry, we couldn't complete your request. Please Try again in a moment")
+    // console.log(receivedData)
+    const results = receivedData.results ? receivedData.results : receivedData.title ? receivedData : errorMessage('', "Sorry, we couldn't complete your request. Please Try again in a moment")
     return results
 }

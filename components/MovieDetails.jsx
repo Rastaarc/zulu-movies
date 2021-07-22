@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import {IMAGE_PATH} from '../libs/constants'
 import Details from './Details'
 import ProductionCompany from './ProductionCompany'
 
@@ -95,11 +96,23 @@ import ProductionCompany from './ProductionCompany'
 //     vote_count: 22047
 // }
 const MovieDetails = ({movie}) => { // const DATA = movie
-    DATA = movie
+    const DATA = movie
     return (
         <div className="container mx-auto my-5 grid gap-y-8 sm:gap-y-0 sm:grid-cols-2 sm:gap-x-5 md:grid-cols-3 p-5 md:gap-x-10">
             <div className="flex flex-col sm:flex-row sm:col-span-full">
-                <Image className="object-cover transition-all hover:scale-105 duration-700 h-20" src="/Rasta.jpg" width="400" height="300"/>
+                <div className="h-72 w-96">
+                    {
+                    DATA.poster_path && (
+                        <Image className="object-fill transition-all hover:scale-105 duration-700 h-20"
+                            src={
+                                `${IMAGE_PATH}${
+                                    DATA.poster_path
+                                }`
+                            }
+                            width="400"
+                            height="360"/>
+                    )
+                } </div>
                 <div className="mt-5 space-y-5 sm:mt-0 sm:px-5">
                     <section>
                         <h1 className="text-lg md:text-2xl font-bold">
@@ -147,8 +160,8 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                     </section>
                 </div>
             </div>
-            <div className="flex flex-col space-y-8 sm:col-span-full sm:mt-5">
-                <section>
+            <div className="flex flex-col space-y-8 sm:col-span-full sm:mt-8">
+                <section className="mt-5">
                     <h5 className="font-bold text-lg sm:text-xl lg:text-2xl">Overview</h5>
                     <p className="text-justify pt-1 lg:text-xl">
                         {
@@ -158,7 +171,7 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                 {
                 (DATA.production_companies && DATA.production_companies.length > 0) && (
                     <section>
-                        <h5 className="font-bold text-lg sm:text-xl lg:text-2xl">Production Companies</h5>
+                        <h5 className="mt-5 font-bold text-lg sm:text-xl lg:text-2xl">Production Companies</h5>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap md:justify-evenly">
                             {
                             DATA.production_companies.map(company => {

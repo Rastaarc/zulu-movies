@@ -5,24 +5,9 @@ import MovieDetails from '../../components/MovieDetails'
 import {movieDetails} from '../../libs/fetchMovies'
 
 const Movie = ({movie, error}) => {
-    const initialStates = {
-        title: 'Movie Details ',
-        desc: 'The Description of the movie goes here'
-    }
-    const [title, setTitle] = useState(state => initialStates.title)
-    const [desc, setDesc] = useState(state => initialStates.desc)
-    useEffect(() => {
-        if (movie.title) {
-            setTitle(movie.title)
-        }
-        if (movie.overview) {
-            setDesc(movie.overview)
-        }
-        return() => {
-            setTitle(prevState => initialStates.title)
-            setDesc(prevState => initialStates.desc)
-        }
-    }, [movie])
+    const title = movie.title ? movie.title : 'Movie Details '
+    const desc = movie.overview ? movie.overview : 'The Description of the movie goes here'
+
     return (
         <>
             <Head>
@@ -54,7 +39,7 @@ export const getServerSideProps = async (context) => {
     // }
 
     const data = await movieDetails(movieId)
-    console.log(data);
+    // console.log(data);
 
     return {
         props: {

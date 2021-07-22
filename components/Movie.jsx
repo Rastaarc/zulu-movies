@@ -15,14 +15,14 @@ const Movie = ({movie}) => {
             onClick={
                 () => pushToDetails(movie.id)
         }>
-            <Image className="object-cover object-center transform group-hover:scale-110 transition-all duration-500 ease-in-out" layout="responsive"
+            <Image className="object-fill object-center transform group-hover:scale-110 transition-all duration-500 ease-in-out" layout="responsive"
                 src={
                     `${IMAGE_PATH}${
                         movie.poster_path
                     }`
                 }
                 width="1920"
-                height="1280"/>
+                height="1680"/>
             <div className="p-2 truncate w-full max-w-sm">
                 <p className="text-xl tracking-wide group-hover:font-bold">
                     {
