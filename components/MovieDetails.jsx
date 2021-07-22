@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import {IMAGE_PATH} from '../libs/constants'
 import Details from './Details'
+import Movie from './Movie'
 import ProductionCompany from './ProductionCompany'
 
 // const DATA = {
@@ -95,12 +96,12 @@ import ProductionCompany from './ProductionCompany'
 //     vote_average: 8.4,
 //     vote_count: 22047
 // }
-const MovieDetails = ({movie}) => { // const DATA = movie
+const MovieDetails = ({movie, similar}) => { // const DATA = movie
     const DATA = movie
     return (
         <div className="container mx-auto my-5 grid gap-y-8 sm:gap-y-0 sm:grid-cols-2 sm:gap-x-5 md:grid-cols-3 p-5 md:gap-x-10">
             <div className="flex flex-col sm:flex-row sm:col-span-full">
-                <div className="h-72 w-96">
+                <div className="">
                     {
                     DATA.poster_path && (
                         <Image className="object-fill transition-all hover:scale-105 duration-700 h-20"
@@ -113,7 +114,7 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                             height="360"/>
                     )
                 } </div>
-                <div className="mt-5 space-y-5 sm:mt-0 sm:px-5">
+                <div className="mt-5 space-y-5 sm:mt-0 sm:px-5 w-full overflow-hidden overflow-ellipsis">
                     <section>
                         <h1 className="text-lg md:text-2xl font-bold">
                             {
@@ -127,7 +128,7 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                             })
                         } </p>
                     </section>
-                    <section>
+                    <section className="w-full">
                         <Details title="Release Date"
                             text={
                                 DATA.release_date && DATA.release_date
@@ -151,18 +152,15 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                         <Details title="Revenue"
                             text={
                                 DATA.revenue && '$' + DATA.revenue
-                            }/>
-                        <Details title="Homepage" link
+                            }/> {/* <Details title="Homepage" link
                             text={
                                 DATA.homepage && DATA.homepage
-                            }/>
-
-                    </section>
+                            }/> */} </section>
                 </div>
             </div>
             <div className="flex flex-col space-y-8 sm:col-span-full sm:mt-8">
-                <section className="mt-5">
-                    <h5 className="font-bold text-lg sm:text-xl lg:text-2xl">Overview</h5>
+                <section className="mt-5 w-full">
+                    <h5 className="font-bold text-lg sm:text-xl lg:text-2xl text-center">Overview</h5>
                     <p className="text-justify pt-1 lg:text-xl">
                         {
                         DATA.overview ? DATA.overview : 'Uknown Movie'
@@ -171,7 +169,7 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                 {
                 (DATA.production_companies && DATA.production_companies.length > 0) && (
                     <section>
-                        <h5 className="mt-5 font-bold text-lg sm:text-xl lg:text-2xl">Production Companies</h5>
+                        <h5 className="mt-5 font-bold text-lg sm:text-xl lg:text-2xl text-center">Production Companies</h5>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap md:justify-evenly">
                             {
                             DATA.production_companies.map(company => {
@@ -193,7 +191,23 @@ const MovieDetails = ({movie}) => { // const DATA = movie
                         } </div>
                     </section>
                 )
-            } </div>
+            }
+                <section className="">
+                    <h5 className="mt-5 font-bold text-lg sm:text-xl lg:text-2xl mb-5 text-center">Similar Movies</h5>
+                    <div className="container grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                        {
+                        similar && similar.length > 0 && (similar.map(movie => {
+                            return (
+                                <Movie key={
+                                        movie.id
+                                    }
+                                    movie={movie}/>
+                            )
+                        }))
+                    } </div>
+                </section>
+
+            </div>
         </div>
     )
 }
