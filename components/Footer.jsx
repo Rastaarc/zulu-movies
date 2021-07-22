@@ -10,7 +10,9 @@ const Footer = () => {
                     &copy; {
                     " " + new Date().getFullYear() + ", "
                 }
-                    Zulu. All Right Reserved. Developed by Rastaarc
+                    Zulu. All Right Reserved. Developed by Rastaarc with {"  "}
+                    <a className="text-green-300 px-1" href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">TMDB</a>
+                    API
                 </p>
                 <div className="pt-5 flex items-center justify-center p-2 space-x-4 text-gray-100">
                     <a href="http://www.linkedin.com/in/rastaxarm" target="_blank" rel="noopener noreferrer">

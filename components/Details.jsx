@@ -4,7 +4,7 @@ const Details = ({
     link = false
 }) => {
     return (
-        <p className="font-bold text-sm md:text-lg lg:text-xl lg:mb-2">
+        <p className="font-bold text-sm md:text-lg lg:text-xl lg:mb-2 break-words">
             {title}: {" "}
             {
             link ? <a href={text}
