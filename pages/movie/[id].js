@@ -58,7 +58,7 @@ export const getServerSideProps = async (context) => {
 
     return {
         props: {
-            error: null, // data.error ? data : null,
+            error: data.error ? data : null,
             movie: data.error ? {} : data
         }
     }
